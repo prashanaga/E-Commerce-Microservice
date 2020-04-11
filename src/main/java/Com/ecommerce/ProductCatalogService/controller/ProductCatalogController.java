@@ -2,7 +2,7 @@
  @author   Prashant Agarwal
  @version  1.0
 */
-package Com.ecommerce.ProductCatalogService.Controller;
+package Com.ecommerce.ProductCatalogService.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import Com.ecommerce.ProductCatalogService.Model.ProductMetaDataModel;
+import Com.ecommerce.ProductCatalogService.model.ProductMetaDataModel;
 import Com.ecommerce.ProductCatalogService.Service.ProductService;
 
 @RestController
@@ -18,12 +18,18 @@ import Com.ecommerce.ProductCatalogService.Service.ProductService;
 public class ProductCatalogController {
 	
 	 @Autowired
-	  ProductService productService;
+	 ProductService productService;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/product/{asin}", produces = "application/json")
 	public ProductMetaDataModel getProductDetails(@PathVariable String asin) {
-		ProductMetaDataModel productMetadata = productService.findById(asin).get();
+		ProductMetaDataModel productMetadata = productService.findById(asin);
 		return productMetadata;
 	}
+	@RequestMapping(method = RequestMethod.POST, value = "/product/{productMetaDataModel}", produces = "application/json")
+	public void addProductDetails(@PathVariable ProductMetaDataModel productMetaDataModel) {
+		
+		productService.addNewProduct(productMetaDataModel);
+	}
+	
 
 }

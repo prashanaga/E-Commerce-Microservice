@@ -8,22 +8,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import Com.ecommerce.ProductCatalogService.Service.ProductService;
 import Com.ecommerce.ProductCatalogService.dao.ProductMetaDataDao;
+import Com.ecommerce.ProductCatalogService.model.ProductMetaDataModel;
 
 public class ProductServiceImpl implements ProductService {
-	
-	 private ProductMetaDataDao productRepository;
-	
+
+	private ProductMetaDataDao productRepository;
+
 	@Autowired
-	    public ProductServiceImpl(ProductMetadataDao productRepository) {
-	       
-			this.productRepository = productRepository;
-			
-	    }
-	    
+	public ProductServiceImpl(ProductMetaDataDao productRepository) {
+
+		this.productRepository = productRepository;
+
+	}
+
 	@Override
-    public ProductMetadataModel findById(String id) {
-        return productRepository.findById(id);
-    }
+	public ProductMetaDataModel findById(String id) {
+
+		return productRepository.findById(id);
+	}
+
+	@Override
+	public void addNewProduct(ProductMetaDataModel productMetaDataModel) {
+
+	}
 
 }
-

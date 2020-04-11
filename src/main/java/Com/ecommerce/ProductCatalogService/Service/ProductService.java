@@ -6,8 +6,10 @@ package Com.ecommerce.ProductCatalogService.Service;
 
 import Com.ecommerce.ProductCatalogService.model.ProductMetaDataModel;
 
+
 public interface ProductService {
-	ProductMetaDataModel findById(String id);
+	public ProductMetaDataModel findById(String id);
+	public void addNewProduct(ProductMetaDataModel productMetaDataModel);
 
 }
 
