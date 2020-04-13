@@ -1,8 +1,8 @@
 /**
- @author   Prashant Agarwal
+ @author   Prashant, Tauseef, Tarun Rainy
  @version  1.0
 */
-package rowMapper;
+package Com.ecommerce.ProductCatalogService.rowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,10 +18,10 @@ public class ProductMetaDataRowMapper implements RowMapper<ProductMetaDataModel>
 		
 		ProductMetaDataModel productMetaDataModel=new ProductMetaDataModel();
 		productMetaDataModel.setId(rs.getString("PRODUCT_ID"));
-		productMetaDataModel.setId(rs.getString("NAME"));
-		productMetaDataModel.setId(rs.getString("BRAND"));
-		productMetaDataModel.setId(rs.getString("TITLE"));
-		productMetaDataModel.setId(rs.getString("PRICE"));
+		productMetaDataModel.setName(rs.getString("NAME"));
+		productMetaDataModel.setBrand(rs.getString("BRAND"));
+		productMetaDataModel.setTitle(rs.getString("TITLE"));
+		productMetaDataModel.setPrice(rs.getFloat("PRICE"));
 		productMetaDataModel.setId(rs.getString("CATEGORY_ID"));
 		
 		return productMetaDataModel;

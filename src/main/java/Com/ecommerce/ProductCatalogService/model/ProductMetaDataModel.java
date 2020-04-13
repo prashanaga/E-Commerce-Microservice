@@ -1,5 +1,5 @@
 /**
- @author   Prashant Agarwal
+ @author   Prashant, Tauseef, Tarun Rainy
  @version  1.0
 */
 package Com.ecommerce.ProductCatalogService.model;

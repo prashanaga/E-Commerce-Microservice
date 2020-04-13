@@ -12,6 +12,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @SpringBootApplication
 public class ProductCatalogServiceApplication{
 
+	@Autowired
+    JdbcTemplate jdbcTemplate;
 	public static void main(String[] args) {
 		SpringApplication.run(ProductCatalogServiceApplication.class, args);
 		
